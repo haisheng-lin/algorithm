@@ -1,0 +1,23 @@
+meta:
+  url:
+  name:
+  author:
+  thumbnail:
+  description:
+  sns:
+    - twitter
+slide:
+  loop: true
+  sidebar: true
+  targetBlank: true
+  showIndex: false
+  isVertical: false
+  code:
+    languages:
+      - javascript
+    plugins:
+      - line-highlight
+    theme: default
+extends:
+  js:
+  css:
