@@ -9,6 +9,18 @@ const ListNode = SingleLinkedList.ListNode
  * @returns boolean
  */
 function hasCycle<T>(list: SingleLinkedList<T>): boolean {
+  if (!list.head) {
+    return false
+  }
+  let slow = list.head,
+    fast = list.head
+  while (slow.next && fast.next && fast.next) {
+    slow = slow.next
+    fast = fast.next
+    if (slow === fast) {
+      return true
+    }
+  }
   return false
 }
 

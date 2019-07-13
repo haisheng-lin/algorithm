@@ -9,7 +9,21 @@
  * @returns number
  */
 function containerWithMostWater(heights: number[]): number {
-  return -1
+  let max = 0
+  let start = 0,
+    end = heights.length - 1
+  while (start < end) {
+    const area = (end - start) * Math.min(heights[start], heights[end])
+    max = Math.max(max, area)
+    if (heights[start] < heights[end]) {
+      const height = heights[start]
+      while (start < end && heights[start] <= height) start++
+    } else {
+      const height = heights[end]
+      while (start < end && heights[end] <= height) end--
+    }
+  }
+  return max
 }
 
 // test case

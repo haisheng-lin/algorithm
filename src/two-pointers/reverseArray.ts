@@ -4,7 +4,15 @@
  * @param {any[]} items
  * @returns void
  */
-function reverseArray(items: any[]): void {}
+function reverseArray(items: any[]): void {
+  let start = 0,
+    end = items.length - 1
+  while (start < end) {
+    const temp = items[start]
+    items[start] = items[end]
+    items[end] = temp
+  }
+}
 
 // test case
 // 反转后，nums = [4, 3, 2, 1]
