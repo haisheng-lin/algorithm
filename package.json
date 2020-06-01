@@ -11,8 +11,5 @@
     "TypeScript"
   ],
   "author": "haisheng-lin",
-  "license": "ISC",
-  "devDependencies": {
-    "fusuma": "^1.1.0"
-  }
+  "license": "ISC"
 }
