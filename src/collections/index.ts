@@ -1,2 +1,2 @@
-export { default as SingleLinkedList } from './SingleLinkedList'
-export * from './SegmentTreeNode'
+export { default as SingleLinkedList } from './SingleLinkedList';
+export { default as SegmentTreeNode } from './SegmentTreeNode';
