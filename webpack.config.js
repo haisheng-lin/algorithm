@@ -1,14 +1,19 @@
 const path = require('path');
 
+const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'none',
   entry: {
-    main: path.resolve(__dirname, 'src/index'),
+    algorithm: path.resolve(__dirname, 'src/index'),
+    'algorithm.min': path.resolve(__dirname, 'src/index'),
   },
   output: {
-    filename: '[name].[chunkhash:8].js', // 输出文件名，其中 [name] 根据 entry 中的键值决定
+    filename: '[name].js', // 输出文件名，其中 [name] 根据 entry 中的键值决定
+    library: 'algorithm', // 库名称
+    libraryTarget: 'umd',
+    libraryExport: 'default',
     path: path.resolve(__dirname, 'dist'), // 输出路径
   },
   module: {
@@ -23,4 +28,12 @@ module.exports = {
     },
   },
   plugins: [new CleanWebpackPlugin()],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        include: /\.min\.js$/,
+      }),
+    ],
+  },
 };
