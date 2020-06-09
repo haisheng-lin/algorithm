@@ -1,7 +1,24 @@
 const path = require('path');
+const fs = require('fs');
+const glob = require('glob');
 
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+// src 下的文件夹用 webpack alias 处理
+const folderPaths = glob
+  .sync(path.resolve(__dirname, 'src/*'))
+  .filter(str => fs.lstatSync(str).isDirectory());
+
+const aliasMap = folderPaths.reduce((map, folderPath) => {
+  const lastIndex = folderPath.lastIndexOf('/');
+  const folderName = folderPath.substring(lastIndex + 1);
+  if (folderName) {
+    map[folderName] = folderPath;
+  }
+
+  return map;
+}, {});
 
 module.exports = {
   mode: 'none',
@@ -22,10 +39,7 @@ module.exports = {
   resolve: {
     // 不加的话无法解析不带 '.ts' 扩展的路径
     extensions: ['.ts', '.tsx', '.js'],
-    alias: {
-      collections: path.resolve(__dirname, 'src/collections'),
-      utils: path.resolve(__dirname, 'src/utils'),
-    },
+    alias: aliasMap,
   },
   plugins: [new CleanWebpackPlugin()],
   optimization: {
