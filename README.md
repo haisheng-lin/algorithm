@@ -13,6 +13,12 @@ pnpm install
 pnpm run dev
 ```
 
+## Unit Test
+
+```shell
+pnpm run test
+```
+
 ## Build
 
 ```shell
