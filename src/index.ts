@@ -1,3 +1,3 @@
-import { addLargeNumber } from 'utils';
+import { addLargeNumber } from '@/utils';
 
 export default addLargeNumber;

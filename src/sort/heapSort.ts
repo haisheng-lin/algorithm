@@ -1,4 +1,4 @@
-import { swap } from 'utils';
+import { swap } from '@/utils';
 
 /**
  * 调整堆，使堆符合定义

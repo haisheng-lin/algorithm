@@ -1,4 +1,4 @@
-import { swap } from 'utils';
+import { swap } from '@/utils';
 
 class Heap<T> {
   private comparator: (i1: T, i2: T) => number;

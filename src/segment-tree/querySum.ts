@@ -1,4 +1,4 @@
-import { SegmentTreeNode } from '../collections';
+import { SegmentTreeNode } from '@/collections';
 
 class QuerySum {
   private node: SegmentTreeNode | null;
