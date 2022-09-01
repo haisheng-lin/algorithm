@@ -1,4 +1,4 @@
-import { SingleLinkedList } from '../collections';
+import { SingleLinkedList } from '@/collections';
 
 /**
  * 判断链表是否有环

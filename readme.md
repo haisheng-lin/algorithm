@@ -1,20 +1,20 @@
 ## Install
 
 ```shell
-npm install
+# use pnpm as package manager
+npm install -g pnpm
 
-# install TypeScript globally
-npm install -g typescript
+pnpm install
 ```
 
-## Run
+## Development
 
 ```shell
-npx fusuma start
+pnpm run dev
 ```
 
-## Compliation
+## Build
 
 ```shell
-tsc
+pnpm run build
 ```
