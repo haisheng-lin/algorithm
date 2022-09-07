@@ -72,7 +72,6 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "**/__tests__/*.spec.ts",
     "node_modules",
   ]
 }
