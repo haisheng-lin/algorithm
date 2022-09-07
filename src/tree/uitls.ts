@@ -62,7 +62,9 @@ export function printBinaryTree<T = any>(root: BinaryTreeNode<T> | null) {
   const m = 2 * d - 1;
   const n = 2 ** (d + 1) - 3;
 
-  const matrix: string[][] = Array.from({ length: m }, () => Array(n).fill(''));
+  const matrix: string[][] = Array.from({ length: m }, () =>
+    Array(n).fill(' ')
+  );
 
   const filler = (node: BinaryTreeNode<T> | null, r: number, c: number) => {
     if (r >= m || !node) {
@@ -83,7 +85,7 @@ export function printBinaryTree<T = any>(root: BinaryTreeNode<T> | null) {
   };
 
   filler(root, 0, (n - 1) / 2);
-  const str = matrix.map(row => row.join(' ')).join('\n');
+  const str = matrix.map(row => row.join('')).join('\n');
 
   console.log(str);
 }
