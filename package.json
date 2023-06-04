@@ -11,11 +11,6 @@
     "test": "jest --runInBand --verbose",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "src/**/*.ts": [
-      "prettier --write"
-    ]
-  },
   "keywords": [
     "algorithm",
     "TypeScript"
